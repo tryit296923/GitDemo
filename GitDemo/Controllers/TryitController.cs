@@ -11,7 +11,7 @@ namespace GitDemo.Controllers
         
         public string Hello()
         {
-            return "Reds888";
+            return "Reds88";
         }
     }
 }
