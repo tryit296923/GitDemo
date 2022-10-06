@@ -16,7 +16,7 @@ namespace GitDemo.Controllers
         }
         public string Eric()
         {
-            return "Eric888";
+            return "Eric8888";
 
         }
     }
