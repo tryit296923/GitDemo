@@ -11,11 +11,13 @@ namespace GitDemo.Controllers
         
         public string Hello()
         {
+
             return "Reds";
         }
         public string Eric()
         {
             return "Eric888";
+
         }
     }
 }
