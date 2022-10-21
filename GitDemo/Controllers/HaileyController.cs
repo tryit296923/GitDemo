@@ -8,5 +8,9 @@ namespace GitDemo.Controllers
         {
             return View();
         }
+        public IActionResult OwenClass()
+        {
+            return View();
+        }
     }
 }
