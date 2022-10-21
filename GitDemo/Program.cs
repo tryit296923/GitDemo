@@ -33,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+//SOS
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -41,5 +41,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// sdsadsassa
+// William
 
 // Hailey
