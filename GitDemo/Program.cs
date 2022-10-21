@@ -5,6 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //abcdefghijklmnopqrstuvwxyz
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10800);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -26,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+//SOS
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -36,3 +43,8 @@ app.MapControllerRoute(
 app.Run();
 
 // sdsadsassa
+// William
+
+// Hailey
+
+//mao's note
