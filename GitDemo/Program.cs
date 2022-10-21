@@ -1,9 +1,25 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10800);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(opt => {
+        opt.AccessDeniedPath = "/Home/Error";
+        opt.LoginPath = "/Home";
+        opt.ExpireTimeSpan = TimeSpan.FromSeconds(600);
+    });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
