@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +13,13 @@ builder.Services.AddSession(options =>
 });
 
 var app = builder.Build();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(opt => {
+        opt.AccessDeniedPath = "/Home/Error";
+        opt.LoginPath = "/Home";
+        opt.ExpireTimeSpan = TimeSpan.FromSeconds(600);
+    });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -32,3 +41,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// sdsadsassa
