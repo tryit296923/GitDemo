@@ -1,0 +1,14 @@
+diff a/GitDemo/Controllers/TryitController.cs b/GitDemo/Controllers/TryitController.cs	(rejected hunks)
+@@ -11,7 +11,11 @@
+         
+         public string Hello()
+         {
+-            return "Reds888";
++            return "Reds";
++        }
++        public string Eric()
++        {
++            return "Eric888";
+         }
+     }
+ }
